@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package me.gogradually.schedule;
+
+option java_multiple_files = true;
+option java_package = "me.gogradually.grpcmockserver.proto";
+option java_outer_classname = "SplitProto";
+
+message ScheduleGrpcRequest {
+  int64 id = 1;
+}
+
+message ScheduleGrpcResponse {
+  repeated ScheduleGrpc finished_schedules = 1;
+  repeated ScheduleGrpc not_finished_schedules = 2;
+}
+
+message ScheduleGrpc {
+  string title = 1;
+  string description = 2;
+}
+
+service MockGrpcService {
+  rpc getSchedules (ScheduleGrpcRequest) returns (ScheduleGrpcResponse);
+}
