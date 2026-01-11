@@ -1,6 +1,5 @@
-package me.gogradually.springaitest.application
+package me.gogradually.springaitest.application.openai
 
-import lombok.extern.slf4j.Slf4j
 import org.slf4j.LoggerFactory
 import org.springframework.ai.chat.client.ChatClient
 import org.springframework.ai.chat.prompt.PromptTemplate

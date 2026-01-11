@@ -1,3 +1,3 @@
-package me.gogradually.springaitest.application
+package me.gogradually.springaitest.application.openai
 
 data class TaskStep(val stepNumber: Int, val description: String)
