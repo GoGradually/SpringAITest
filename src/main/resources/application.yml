@@ -6,3 +6,8 @@ spring:
         options:
           model: gpt-5-mini
           temperature: 1
+
+task:
+  grpc:
+    host: localhost
+    port: 9099
