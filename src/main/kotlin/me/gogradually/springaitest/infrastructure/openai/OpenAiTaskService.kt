@@ -10,18 +10,18 @@ import reactor.core.publisher.Mono
 import reactor.kotlin.core.publisher.switchIfEmpty
 
 @Service
-class TaskService (private val chatClientBuilder: ChatClient.Builder) {
-    private val log = LoggerFactory.getLogger(TaskService::class.java)
+class OpenAiTaskService (private val chatClientBuilder: ChatClient.Builder) {
+    private val log = LoggerFactory.getLogger(OpenAiTaskService::class.java)
     private val chatClient = chatClientBuilder.build()
-    val outputConverter = BeanOutputConverter(TaskPlan::class.java) // Spring AI의 structured output 변환기
+    val outputConverter = BeanOutputConverter(OpenAiTaskPlan::class.java) // Spring AI의 structured output 변환기
 
     private val template = """
             Given the user goal: "{goal}", break it into step-by-step tasks.
-            Respond ONLY with a JSON object matching the TaskPlan schema, nothing else:
+            Respond ONLY with a JSON object matching the OpenAiTaskPlan schema, nothing else:
             {format}
         """.trimIndent()
 
-    fun generateTaskPlan(goal: String): Mono<TaskPlan> {
+    fun generateTaskPlan(goal: String): Mono<OpenAiTaskPlan> {
 
 
         val prompt = PromptTemplate(template).create(mapOf("goal" to goal, "format" to outputConverter.format))
