@@ -1,5 +1,6 @@
-package me.gogradually.springaitest.infrastructure.openai
+package me.gogradually.springaitest.infrastructure.taskspliter.openai
 
+import me.gogradually.springaitest.application.task.query.existtask.TaskScript
 import org.slf4j.LoggerFactory
 import org.springframework.ai.chat.client.ChatClient
 import org.springframework.ai.chat.prompt.PromptTemplate
@@ -21,9 +22,7 @@ class OpenAiTaskService (private val chatClientBuilder: ChatClient.Builder) {
             {format}
         """.trimIndent()
 
-    fun generateTaskPlan(goal: String): Mono<OpenAiTaskPlan> {
-
-
+    fun generateTaskPlan(goal: String, description: String, expertise: String, finishedTask: List<TaskScript>, notFinishedTask: List<TaskScript>): Mono<OpenAiTaskPlan> {
         val prompt = PromptTemplate(template).create(mapOf("goal" to goal, "format" to outputConverter.format))
 
         return chatClient.prompt(prompt)
