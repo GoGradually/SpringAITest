@@ -11,3 +11,7 @@ task:
   grpc:
     host: localhost
     port: 9099
+
+mock:
+  server:
+    url: http://localhost:8088
