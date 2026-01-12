@@ -3,7 +3,7 @@ package me.gogradually.springaitest.infrastructure.grpc
 import io.grpc.ManagedChannel
 import io.grpc.ManagedChannelBuilder
 import me.gogradually.grpcmockserver.proto.MockGrpcServiceGrpc
-import me.gogradually.springaitest.application.task.query.TaskQueryPort
+import me.gogradually.springaitest.application.task.query.existtask.TaskQueryPort
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
