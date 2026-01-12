@@ -1,7 +1,7 @@
 package me.gogradually.springaitest.interfaces.openai
 
-import me.gogradually.springaitest.application.openai.TaskPlan
-import me.gogradually.springaitest.application.openai.TaskService
+import me.gogradually.springaitest.infrastructure.openai.TaskPlan
+import me.gogradually.springaitest.infrastructure.openai.TaskService
 import me.gogradually.springaitest.interfaces.openai.dto.GoalRequest
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody

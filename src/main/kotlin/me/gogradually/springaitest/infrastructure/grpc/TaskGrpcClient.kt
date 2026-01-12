@@ -1,11 +1,10 @@
-package me.gogradually.springaitest.infrastructure
+package me.gogradually.springaitest.infrastructure.grpc
 
 import me.gogradually.grpcmockserver.proto.MockGrpcServiceGrpc
 import me.gogradually.grpcmockserver.proto.TaskGrpcRequest
 import me.gogradually.springaitest.application.task.query.ExistedTaskResponse
 import me.gogradually.springaitest.application.task.query.TaskQueryPort
 import me.gogradually.springaitest.application.task.query.TaskScript
-import me.gogradually.springaitest.domain.task.Task
 
 
 class TaskGrpcClient(taskStub: MockGrpcServiceGrpc.MockGrpcServiceBlockingStub) : TaskQueryPort {

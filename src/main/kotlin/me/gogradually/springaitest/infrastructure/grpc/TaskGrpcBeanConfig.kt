@@ -1,4 +1,4 @@
-package me.gogradually.springaitest.infrastructure
+package me.gogradually.springaitest.infrastructure.grpc
 
 import io.grpc.ManagedChannel
 import io.grpc.ManagedChannelBuilder

@@ -1,4 +1,4 @@
-package me.gogradually.springaitest.application.openai
+package me.gogradually.springaitest.infrastructure.openai
 
 import org.slf4j.LoggerFactory
 import org.springframework.ai.chat.client.ChatClient

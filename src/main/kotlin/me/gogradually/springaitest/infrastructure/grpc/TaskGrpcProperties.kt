@@ -1,4 +1,4 @@
-package me.gogradually.springaitest.infrastructure
+package me.gogradually.springaitest.infrastructure.grpc
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 
