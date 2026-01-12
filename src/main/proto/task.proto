@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package me.gogradually.task;
+
+option java_multiple_files = true;
+option java_package = "me.gogradually.grpcmockserver.proto";
+option java_outer_classname = "SplitProto";
+
+message TaskGrpcRequest {
+  int64 id = 1;
+}
+
+message TaskGrpcResponse {
+  repeated TaskGrpc finished_tasks = 1;
+  repeated TaskGrpc not_finished_tasks = 2;
+}
+
+message TaskGrpc {
+  string title = 1;
+  string description = 2;
+}
+
+service MockGrpcService {
+  rpc getTasks (TaskGrpcRequest) returns (TaskGrpcResponse);
+}
