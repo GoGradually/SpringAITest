@@ -29,8 +29,8 @@ class MockTaskSpliter(
             .uri("/tasks/split")
             .bodyValue(
                 mapOf(
-                    "goal" to goal,
-                    "description" to description,
+                    "title" to goal,
+                    "content" to description,
                     "expertise" to expertise,
                     "finishedTask" to finishedTask,
                     "notFinishedTask" to notFinishedTask
